@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q4 Drill 2</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-image: url(https://wallpapercave.com/wp/wp13656062.jpg);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+
+        <div class="calc-container">
+        <div class="calc-header">
+            <h1 id="head1" class="m-0"></h1>
+        </div>
+
+        <details class="ontoggle">
+            <summary><em>Instructions:</em></summary>
+            <p id="instructions"></p>
+        </details>
+
+        <form>
+            <label>Enter 1st Number:</label><br>
+            <input type="number" id="num1" class="form-control-sm" placeholder="First Number"><br>
+
+            <label>Enter 2nd Number:</label><br>
+            <input type="number" id="num2" class="form-control-sm" placeholder="Second Number"><br>
+
+            <button type="button" class="btn btn-light" onmouseover="product()">Calculate</button>
+        </form>
+
+        <div id="result1">?</div>
+    </div>
+
+    
+    <script>
+        function HeatIndex() {
+            let temp, humidity, HI, status;
+            temp = parseFloat(ddocument.getElementById("temp").value);
+            humidity = parseFloat(document.getElementById("humid").value);
+            
+            HI = temp + (0.33 * humidity) - 4;
+            status = ""; 
+
+            switch(true) {
+                case(HI <= 27) :
+                status = "Comfortable / Cool";
+                break;
+
+                case(HI <= 32) :
+                status = "Warm";
+                break;
+
+                case(HI <= 37) :
+                status = "Hot";
+                break;
+
+                case(HI <= 41) :
+                status = "Very Hot / Caution";
+                break;
+
+                case(HI >= 42) :
+                status = "Extreme Heat / Danger";
+                break;
+
+                case(HI < 0) :
+                status = "Value cannot be determined."
+                break;
+            }
+        }
+    </script>
+</body>
+</html>
